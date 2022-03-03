@@ -8,10 +8,12 @@ check if file exists: readme file already exists. do you want to generate a new 
 """
 
 """Defines funtions for each command"""
+import imp
 from os.path import isfile, isdir
 import re
 import json
 from helper_functions import save_to_json_file, load_from_json_file
+from file_sections import get_section
 
 
 def create(path):
@@ -45,7 +47,7 @@ def create(path):
     return (1)
 
 
-def task(num_of_funcs):
+def task():
     """Add tasks to the README file
     
     Args:
@@ -61,23 +63,57 @@ def task(num_of_funcs):
         print("README.md file has to exist to add tasks.")
         return (0)
 
-    tsk_title = input ("Task's title: ")
-    tsk_description = input ("Task's descriptioin: ")
+    with open(path + "README.md", 'r+') as rdm_file:
+        #When task() is called for the first time
+        if '## Tasks' not in rdm_file.read():
+            #Get the project's description section and add 'task' below it.
+            p_d_section = get_section("# ", "\n")
+            rdm_file.seek(p_d_section[1])
+            tsk_title = input ("Task's title: ")
+            rdm_file.write("\n## Tasks \n" + "\t - #### " + tsk_title + "\n")
 
-    if num_of_funcs is None:
-        num_of_funcs = 0;
-
-    with open(path + "README.md", 'a') as rdm_file:
-        rdm_file.write("\n## Tasks \n" + "\t - #### " + tsk_title + "\n")
-        rdm_file.write("\t   " + tsk_description)
         #you should probably print format here
         # and let function promt be num of function.
-        for func in range(num_of_funcs):
-            func_info = input ("<func name: func description>: ")
-            func_name = "".join(re.findall("\A.*:", func_info))
-            func_description = "".join(re.findall(":.*", func_info))
-            func_url = p_url + "/" + func_name
-            rdm_file.write("\n\t - " + func_url + func_description)
+        p_d_section = get_section("# ", "## Tasks")
+        rdm_file.seek(p_d_section[1])
 
+        file_info = input ("<file name: file description>: ")
+        file_name = "".join(re.findall("\A.*:", file_info))
+        file_description = "".join(re.findall(":.*", file_info))
+        file_url = p_url + "/" + file_name
+        rdm_file.write("\n\n\t - " + file_url + file_description + "\n")
+
+        
     return (1)
 
+def author(num_of_authors):
+    """Adds names of authors to the README file.
+    
+    Args:
+        num_of_authors (int): The number of authors in the project.
+
+    Returns 1 on success. Otherwise - 0.
+    """
+    try:
+        int(num_of_authors)
+    except TypeError:
+        print("Usage message.")
+        return 0
+    if num_of_authors == 0:
+        print("Usage message")
+        return 0
+
+    dict = load_from_json_file(".rdm.txt")
+    path = dict["path"]
+
+    if isfile(path + "README.md") is False:
+        print("README.md file has to exist to add authors.")
+        return (0)
+    
+    with open(path + "README.md", 'a') as f:
+        for author in range(num_of_authors):
+            author_full_name = input("Insert author's full name: ")
+            author_github = input("Insert GitHub username: ")
+            f.write("\n## Authors")
+            f.write("\n\t - {} <{}>".format(author_full_name, author_github))
+             
