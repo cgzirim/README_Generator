@@ -3,18 +3,26 @@
 [comment]: <> (Section_0_begin)
 
 # README.gen
-Readme and be happy
+- Readme and be happy
+- 
 [comment]: <> (Section_0_end)
+
 [comment]: <> (Section_1_begin)
+
 ## Tasks 
+
 [comment]: <> (task_1_begin)
-	- #### 1. game
-	- github.com/g.py:: Race
+
+- #### 1. game
+- github.com/g.py:: Race
+- 
 [comment]: <> (task_1_end)
 
 [comment]: <> (task_2_begin)
-	- #### 2. ball
-	- github.com/b.py:: baller
+
+- #### 2. ball
+- github.com/b.py:: baller
+- 
 [comment]: <> (task_2_end)
 
 [comment]: <> (task_3_begin)
