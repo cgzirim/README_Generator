@@ -9,14 +9,14 @@ A README generator to keep me from procrastinating
 ## Tasks 
 [comment]: <> (task_1_begin)
 
-	- #### 1. Apple
+- #### 1. Apple
 	- Github.com/a.py: iPhone
 
 [comment]: <> (task_1_end)
 [comment]: <> (task_2_begin)
 
-	 - #### 2. Bake
-	 - Github.com/b.py: Cakes
+- #### 2. Bake
+	- Github.com/b.py: Cakes
 
 [comment]: <> (task_2_end)
 [comment]: <> (task_3_begin)
