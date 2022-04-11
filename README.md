@@ -25,7 +25,7 @@ A README generator to keep me from procrastinating
 [comment]: <> (task_4_begin)
 
 - #### 4. Dell
-	- Github.com/d.py: laptops
+	- [d.py](Github.com/d.py): Laptops
 
 [comment]: <> (task_4_end)
 [comment]: <> (task_5_begin)
@@ -46,4 +46,6 @@ A README generator to keep me from procrastinating
 	- Github.com/h.py: Students
 
 [comment]: <> (task_7_end)
+
+
 [comment]: <> (Section_1_end)
