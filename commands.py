@@ -25,7 +25,7 @@ def create(path):
     p_title = input ("Project's title: ")
     p_url = input ("Insert URL of this repository: ")
     p_description = input ("Project's description: ")
-    section0_begin = "[comment]: <> (Section_0_begin)\n\n\n"
+    section0_begin = "[comment]: <> (Section_0_begin)\n\n"
     section0_end = "\n\n[comment]: <> (Section_0_end)"
 
     content = section0_begin + "# " + p_title + "\n" + p_description
@@ -68,8 +68,8 @@ def task():
     # make it's boundries
     if dict['task_exist'] == 0:
         task_header = "## Tasks \n"
-        section1_begin = "\n[comment]: <> (Section_1_begin)\n\n\n"
-        section1_end = "\n\n[comment]: <> (Section_1_end)"
+        section1_begin = "\n[comment]: <> (Section_1_begin)\n\n"
+        section1_end = "\n[comment]: <> (Section_1_end)"
         dict['tasks_num'] = 1
     else:
         task_header = ""
