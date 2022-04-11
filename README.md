@@ -1,11 +1,8 @@
 [comment]: <> (Section_0_begin)
-
 # README Generator
 A README generator to keep me from procrastinating
-
 [comment]: <> (Section_0_end)
 [comment]: <> (Section_1_begin)
-
 ## Tasks 
 [comment]: <> (task_1_begin)
 
@@ -21,20 +18,32 @@ A README generator to keep me from procrastinating
 [comment]: <> (task_2_end)
 [comment]: <> (task_3_begin)
 
-	 - #### 3. Can
-	 - Github.com/c.py: Create
+- #### 3. Can
+	- Github.com/c.py: Create
 
 [comment]: <> (task_3_end)
 [comment]: <> (task_4_begin)
 
-	 - #### 4. Dear
-	 - Github.com/d.py: My dear
+- #### 4. Dell
+	- Github.com/d.py: laptops
 
 [comment]: <> (task_4_end)
 [comment]: <> (task_5_begin)
 
-	 - #### 7. Hand
-	 - Github.com/h.py: The ball
+- #### 5. Emerald
+	- Github.com/e.py: Developers
 
 [comment]: <> (task_5_end)
+[comment]: <> (task_6_begin)
+
+- #### 6. Find
+	- Github.com/f.py: Me!
+
+[comment]: <> (task_6_end)
+[comment]: <> (task_7_begin)
+
+- #### 7. Happy
+	- Github.com/h.py: Students
+
+[comment]: <> (task_7_end)
 [comment]: <> (Section_1_end)
