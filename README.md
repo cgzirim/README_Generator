@@ -9,8 +9,8 @@ A README generator to keep me from procrastinating
 ## Tasks 
 [comment]: <> (task_1_begin)
 
-	 - #### 1. Apple
-	 - Github.com/a.py: iPhone
+	- #### 1. Apple
+	- Github.com/a.py: iPhone
 
 [comment]: <> (task_1_end)
 [comment]: <> (task_2_begin)
