@@ -85,17 +85,29 @@ def task():
     file_name = "".join(file_info[:file_info.index(':')])
     file_description = "".join(file_info[file_info.index(':'):])
     file_url = p_url + "/" + file_name
+    file_url = "[{}]({})".format(file_name, p_url + "/" + file_name)
 
     if tsk_title == "" or file_info == "":
         return (0)
 
+    # tab = "\t"
+    # tab = tab[len(tab) - 1]
+    # tab = "".join(tab)
+
     content =  section1_begin
     content += task_header
     content += "\n[comment]: <> (task_{}_begin)\n\n".format(dict['tasks_num'])
-    content += "\t - #### " + tsk_title + "\n"
-    content += "\t - " + file_url + file_description + "\n"
-    content += "\n[comment]: <> (task_{}_end)\n\n\n".format(dict['tasks_num'])
+    content += "- #### " + tsk_title + "\n"
+    content += "\t- " + file_url + file_description + "\n"
+    content += "\n[comment]: <> (task_{}_end)\n\n".format(dict['tasks_num'])
     content += section1_end
+
+    # content = section1_begin + task_header +\
+    #     "\n[comment]: <> (task_{}_begin)\n\n".format(dict['tasks_num']) +\
+    #     "\t - #### " + tsk_title + "\n" +\
+    #     "\t - " + file_url + file_description + "\n" +\
+    #     "\n[comment]: <> (task_{}_end)\n\n\n".format(dict['tasks_num']) +\
+    #     section1_end
 
     if dict['task_exist'] == 0:
         # Add the task section under section 0
