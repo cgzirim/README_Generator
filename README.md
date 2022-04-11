@@ -1,8 +1,10 @@
 [comment]: <> (Section_0_begin)
+
 # README Generator
 A README generator to keep me from procrastinating
 [comment]: <> (Section_0_end)
 [comment]: <> (Section_1_begin)
+
 ## Tasks 
 [comment]: <> (task_1_begin)
 
