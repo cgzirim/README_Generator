@@ -25,8 +25,8 @@ def create(path):
     p_title = input ("Project's title: ")
     p_url = input ("Insert URL of this repository: ")
     p_description = input ("Project's description: ")
-    section0_begin = "[comment]: <> (Section_0_begin)\n"
-    section0_end = "\n[comment]: <> (Section_0_end)"
+    section0_begin = "[comment]: <> (Section_0_begin)\n\n\n"
+    section0_end = "\n\n[comment]: <> (Section_0_end)"
 
     content = section0_begin + "# " + p_title + "\n" + p_description
     content += section0_end
@@ -68,8 +68,8 @@ def task():
     # make it's boundries
     if dict['task_exist'] == 0:
         task_header = "## Tasks \n"
-        section1_begin = "\n[comment]: <> (Section_1_begin)\n"
-        section1_end = "\n[comment]: <> (Section_1_end)"
+        section1_begin = "\n[comment]: <> (Section_1_begin)\n\n\n"
+        section1_end = "\n\n[comment]: <> (Section_1_end)"
         dict['tasks_num'] = 1
     else:
         task_header = ""
@@ -91,10 +91,10 @@ def task():
 
     content =  section1_begin
     content += task_header
-    content += "[comment]: <> (task_{}_begin)\n".format(dict['tasks_num'])
+    content += "\n[comment]: <> (task_{}_begin)\n\n".format(dict['tasks_num'])
     content += "\t - #### " + tsk_title + "\n"
     content += "\t - " + file_url + file_description + "\n"
-    content += "[comment]: <> (task_{}_end)\n\n".format(dict['tasks_num'])
+    content += "\n[comment]: <> (task_{}_end)\n\n\n".format(dict['tasks_num'])
     content += section1_end
 
     if dict['task_exist'] == 0:
