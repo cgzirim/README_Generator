@@ -268,3 +268,45 @@ def sort_tasks():
 
     refresh_json_file()
     return 1
+
+
+def update_task(task_title):
+    """Updates a task if it exists.
+    
+    Args:
+        task_title (str): Title of the task.
+
+    Documentation: Appends the update to the end of the task.
+    """
+    count_tasks()
+    dict = load_from_json_file("rdm_gen.json")
+    path = dict["path"]
+
+    if dict['task_exist'] == 0:
+        return 0
+
+    flag = 0
+    for i in range(1, dict['tasks_num'] + 1):
+        t_begin = "[comment]: <> (task_{}_begin)".format(i)
+        t_end = "[comment]: <> (task_{}_end)".format(i)
+        t_section = get_section(t_begin, t_end)
+
+        with open(path + 'README.md', 'r') as f:
+            lines = f.readlines()
+        for line in lines[t_section[0]:t_section[1]]:
+            if task_title in line:
+                flag = 1
+                break
+        if flag == 1:
+            break
+
+    if flag == 0:
+        return 0
+
+    update = input("insert update: ")
+    update = "\t- " + update + "\n"
+
+    insert_content(update, t_section[1] - 1)
+
+    return 1
+            
