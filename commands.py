@@ -1,8 +1,10 @@
 """Defines funtions for each command of the README gen."""
 
 from os.path import isfile, isdir
+from turtle import up
 from helper_functions import save_to_json_file, load_from_json_file
 from helper_functions import insert_content, sort_tasks, count_tasks
+from helper_functions import update_task
 
 
 def create(path):
@@ -79,20 +81,21 @@ def task():
 
     #Task title
     tsk_title = input ("Task's title: ")
-    
-    #File(s) created to complete task
+
+    # Update a task and exit if the task exists
+    if update_task(tsk_title) == 1:
+        return 1
+
     file_info = input ("<file name: file description>: ")
     file_name = "".join(file_info[:file_info.index(':')])
     file_description = "".join(file_info[file_info.index(':'):])
     file_url = p_url + "/" + file_name
     file_url = "[{}]({})".format(file_name, p_url + "/" + file_name)
 
+    # A task would not be created if it's title or content is missing
     if tsk_title == "" or file_info == "":
         return (0)
 
-    # tab = "\t"
-    # tab = tab[len(tab) - 1]
-    # tab = "".join(tab)
 
     content =  section1_begin
     content += task_header
