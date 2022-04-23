@@ -166,8 +166,8 @@ def count_tasks():
             count += 1
             i += 1
 
-    # dict['tasks_num'] = count
-    # save_to_json_file(dict, "rdm_gen.json")
+    dict['tasks_num'] = count
+    save_to_json_file(dict, "rdm_gen.json")
     
     return count
 
@@ -227,10 +227,12 @@ def sort_tasks():
         t_begin = "[comment]: <> (task_{}_begin)".format(i)
         t_end = "[comment]: <> (task_{}_end)".format(i)
         tasks_sections.append(get_section(t_begin, t_end))
+
     
     dictionary = {}
     with open(path + "README.md", 'r') as f:
         lines = f.readlines()
+        key_false = 0
         for t_begin, t_end in tasks_sections:
             content = []
             for i in range(t_begin + 1, t_end):
@@ -241,15 +243,23 @@ def sort_tasks():
                         key = int(line[j])
                 content += lines[i]
                 value = "".join(content)
-            dictionary[key] = value
+            # If a key wasn't generated for a task, it means that
+            # task wasn't numbered. generate a with a negative value for it.
+            if key in dictionary.keys():
+                key_false -= 1
+                dictionary[key_false] = value
+            else:
+                dictionary[key] = value
 
     #Sort tasks
     key_list = [k for k in dictionary.keys()]
+    print(key_list)
     if key_list == sorted(key_list):
         return 0
     
     key_list.sort()
 
+    # Delete all tasks in the Task section
     for i in range(1, len(key_list) + 1):
         t_begin = "[comment]: <> (task_{}_begin)".format(i)
         t_end = "[comment]: <> (task_{}_end)".format(i)
@@ -258,13 +268,25 @@ def sort_tasks():
         delete_content(begin + 1, end - 1)
 
     i = 1
+    # Append sorted tasks that are numbered in the Task section
     for key in key_list:
         t_begin = "[comment]: <> (task_{}_begin)".format(i)
         t_end = "[comment]: <> (task_{}_end)".format(i)
 
-        begin, end = get_section(t_begin, t_end)
-        insert_content(dictionary[key], end)
-        i += 1
+        if key >= 0:
+            begin, end = get_section(t_begin, t_end)
+            insert_content(dictionary[key], end)
+            i += 1
+    
+    # Append unnumbered task below numbered tasks
+    for key in key_list:
+        t_begin = "[comment]: <> (task_{}_begin)".format(i)
+        t_end = "[comment]: <> (task_{}_end)".format(i)
+
+        if key < 0:
+            begin, end = get_section(t_begin, t_end)
+            insert_content(dictionary[key], end)
+            i += 1
 
     refresh_json_file()
     return 1
@@ -279,6 +301,7 @@ def update_task(task_title):
     Documentation: Appends the update to the end of the task.
     """
     count_tasks()
+    refresh_json_file()
     dict = load_from_json_file("rdm_gen.json")
     path = dict["path"]
 
