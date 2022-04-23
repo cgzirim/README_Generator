@@ -99,10 +99,10 @@ def task():
 
     content =  section1_begin
     content += task_header
-    content += "\n[comment]: <> (task_{}_begin)\n\n".format(dict['tasks_num'])
+    content += "[comment]: <> (task_{}_begin)\n\n".format(dict['tasks_num'])
     content += "- #### " + tsk_title + "\n"
     content += "\t- " + file_url + file_description + "\n"
-    content += "\n[comment]: <> (task_{}_end)\n\n".format(dict['tasks_num'])
+    content += "\n[comment]: <> (task_{}_end)\n".format(dict['tasks_num'])
     content += section1_end
 
     # content = section1_begin + task_header +\
