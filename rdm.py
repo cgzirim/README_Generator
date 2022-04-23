@@ -3,7 +3,7 @@
 import sys
 from os.path import isdir
 from commands import create, task, author
-from get_args import arguments
+from helper_functions import arguments
 from helper_functions import refresh_json_file
 
 """Documentary"""
