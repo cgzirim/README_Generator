@@ -13,8 +13,8 @@ I wrote this README.md generator to make writing READMEs for ALX school projects
 3. Copy the `rdm` file to your working directory.
 
 ## Usage
-Run `./rdm` to see all commands
-Run `./rdm create` to create a new README.md file
-Run `./rdm task` to add a new task to the README.md file.
+- Run `./rdm` to see all commands
+- Run `./rdm create` to create a new README.md file
+- Run `./rdm task` to add a new task to the README.md file.
 
 ## Examples
