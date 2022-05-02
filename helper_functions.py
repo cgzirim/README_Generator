@@ -98,9 +98,9 @@ def insert_content(content='', line=None):
     path = dict["path"]
 
     content + "\n"
-    with open(path + "README.md", "r+") as f:
+    with open(path + "README.md", "r+", encoding="utf-8") as f:
         contents = f.readlines()
-    with open(path + "README.md", "w") as f:  
+    with open(path + "README.md", "w", encoding="utf-8") as f:  
         contents.insert(line, content)
         contents = "".join(contents)
         f.write(contents)
