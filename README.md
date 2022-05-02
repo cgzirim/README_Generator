@@ -21,5 +21,5 @@ From your working directory:
 - Run `./rdm create` to create a new README.md file
 - Run `./rdm task` to add a new task to the README.md file.
 
-Note: When you open the README.md file, after using this program to create it, you'll find lots of comments - Do Not modify those. The program relies on those comments to create the README.md file. When you push the README.md file it would appear without those comments.
+Note: When you open the README.md file, after using this program to create it, you'll find lots of comments - Do Not modify those. The program relies on those comments to create the README.md file. When you push the README.md file to GitHub it would appear without those comments.
 ## Examples
