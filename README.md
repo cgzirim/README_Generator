@@ -1,51 +1,20 @@
-[comment]: <> (Section_0_begin)
 # README Generator
-A README generator to keep me from procrastinating
-[comment]: <> (Section_0_end)
-[comment]: <> (Section_1_begin)
-## Tasks 
-[comment]: <> (task_1_begin)
+I wrote this README.md generator to make writing READMEs for ALX school projects easier - keeping me from procrastinating. 
 
-- #### 1. Apple
-	- Github.com/a.py: iPhone
+## Prerequisite
+- Python3 must be installed on your machine.
 
-[comment]: <> (task_1_end)
-[comment]: <> (task_2_begin)
+## Features
+- Sorts tasks in ascending order automatically.
 
-- #### 2. Bake
-	- Github.com/b.py: Cakes
+## Installation
+1. Fork or clone this repo to your root directory.
+2. Open the directory and give the `rdm` file execute permission.
+3. Copy the `rdm` file to your working directory.
 
-[comment]: <> (task_2_end)
-[comment]: <> (task_3_begin)
+## Usage
+- Run `./rdm` to see all commands
+- Run `./rdm create` to create a new README.md file
+- Run `./rdm task` to add a new task to the README.md file.
 
-- #### 3. Can
-	- Github.com/c.py: Create
-
-[comment]: <> (task_3_end)
-[comment]: <> (task_4_begin)
-
-- #### 4. Dell
-	- [d.py](Github.com/d.py): Laptops
-
-[comment]: <> (task_4_end)
-[comment]: <> (task_5_begin)
-
-- #### 5. Emerald
-	- Github.com/e.py: Developers
-
-[comment]: <> (task_5_end)
-[comment]: <> (task_6_begin)
-
-- #### 6. Find
-	- Github.com/f.py: Me!
-
-[comment]: <> (task_6_end)
-[comment]: <> (task_7_begin)
-
-- #### 7. Happy
-	- Github.com/h.py: Students
-
-[comment]: <> (task_7_end)
-
-
-[comment]: <> (Section_1_end)
+## Examples
