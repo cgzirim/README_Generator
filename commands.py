@@ -1,7 +1,6 @@
 """Defines funtions for each command of the README gen."""
 
 from os.path import isfile, isdir
-from turtle import up
 from helper_functions import save_to_json_file, load_from_json_file
 from helper_functions import insert_content, sort_tasks, count_tasks
 from helper_functions import update_task
