@@ -65,10 +65,10 @@ def task():
 
     save_to_json_file(dict, "rdm_gen.json")
 
-    # When task() is called for the first time input the task header and
-    # make it's boundries
+    # When task() is called for the first time, input the task header and
+    # create it's boundries
     if dict['task_exist'] == 0:
-        task_header = "## Tasks \n"
+        task_header = "## Tasks📃 \n"
         section1_begin = "\n[comment]: <> (Section_1_begin)\n\n"
         section1_end = "\n[comment]: <> (Section_1_end)"
         dict['tasks_num'] = 1
@@ -99,7 +99,7 @@ def task():
     content =  section1_begin
     content += task_header
     content += "[comment]: <> (task_{}_begin)\n\n".format(dict['tasks_num'])
-    content += "- #### " + tsk_title + "📃" + "\n"
+    content += "- #### " + tsk_title + "\n"
     content += "\t- " + file_url + file_description + "\n"
     content += "\n[comment]: <> (task_{}_end)\n".format(dict['tasks_num'])
     content += section1_end
