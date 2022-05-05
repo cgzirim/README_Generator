@@ -68,7 +68,7 @@ def task():
     # When task() is called for the first time, input the task header and
     # create it's boundries
     if dict['task_exist'] == 0:
-        task_header = "## Tasks📃 \n"
+        task_header = "## Tasks 📃 \n"
         section1_begin = "\n[comment]: <> (Section_1_begin)\n\n"
         section1_end = "\n[comment]: <> (Section_1_end)"
         dict['tasks_num'] = 1
