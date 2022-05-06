@@ -9,6 +9,7 @@ from helper_functions import refresh_json_file
 """Documentary"""
 args = arguments(sys.argv)
 first_arg = args[1]
+
 if first_arg == "create":
     #usage: <create path>
     path = "./"
@@ -28,8 +29,5 @@ elif first_arg == "author":
 #case unknown_command:
 else:
     print("Usage:\n" +
-            "  Create README.md - ./rdm.py create path\n" +
-            "  Add task         - ./rdm.py task\n" +
-            "  Add authors      - ./rdm.py author")
-
-
+            "  ./rdm create <path>  - Generate README.md\n" +
+            "  ./rdm task           - Add task to README.md\n")
