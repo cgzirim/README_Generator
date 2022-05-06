@@ -23,3 +23,66 @@ From your working directory:
 
 Note: When you open the README.md file, after using this program to create it, you'll find lots of comments - Do Not modify those. The program relies on those comments to create the README.md file. When you push the README.md file to GitHub it would appear without those comments.
 ## Examples of use
+Confirm the `README_Generator` directory is in the directory you want it to be:
+```
+root@4332e3357bf5:~# ls
+README_Generator  alx-system_engineering-devops
+root@4332e3357bf5:~# cd README_Generator/
+```
+Update path in `rdm` file in the `README_Generator` directory:
+```
+root@4332e3357bf5:~/README_Generator# cat rdm
+#!/bin/bash
+...
+python3 /[path]/README_Generator/rdm.py $1 $2
+
+root@4332e3357bf5:~/README_Generator# pwd
+/root/README_Generator
+
+root@4332e3357bf5:~/README_Generator# vi rdm
+root@4332e3357bf5:~/README_Generator# cat rdm
+#!/bin/bash
+...
+python3 /root/README_Generator/rdm.py $1 $2
+```
+Copy the `rdm` file to the project directory of your choice:
+```
+root@4332e3357bf5:~/README_Generator# cd
+root@4332e3357bf5:~# cp README_Generator/rdm alx-system_engineering-devops/0x00-shell_basics/
+root@4332e3357bf5:~# cd alx-system_engineering-devops/0x00-shell_basics/
+root@4332e3357bf5:~/alx-system_engineering-devops/0x00-shell_basics#
+```
+Generate README.md file with the `./rdm create` command:
+```
+root@4332e3357bf5:~/alx-system_engineering-devops/0x00-shell_basics# ./rdm create
+Project's title: Shell, basics
+Insert URL of this repository: https://github.com/iChigozirim/alx-system_engineering-devops/tree/master/0x00-shell_basics
+Project's description: In this project, I learned how to navigate directories, how to look around, and how to manipulate file in a Linux terminal.
+root@4332e3357bf5:~/alx-system_engineering-devops/0x00-shell_basics#
+```
+Add task to the README.md file with the `./rdm task` command:
+```
+root@4332e3357bf5:~/alx-system_engineering-devops/0x00-shell_basics# ./rdm task
+Task's title: 0. Where am I?
+file name: 0-current_working_directory
+file description: Bash script that prints the absolute pathname of the current working directory.
+root@4332e3357bf5:~/alx-system_engineering-devops/0x00-shell_basics#
+```
+Add another task:
+```
+root@4332e3357bf5:~/alx-system_engineering-devops/0x00-shell_basics# ./rdm task
+Task's title: 3. The long format
+file name: 3-listfiles
+file description: Bash script that displays current directory contents in long format.
+root@4332e3357bf5:~/alx-system_engineering-devops/0x00-shell_basics#
+```
+Push the README.md file to the project's directory:
+```
+root@4332e3357bf5:~/alx-system_engineering-devops/0x00-shell_basics# git add README.md
+root@4332e3357bf5:~/alx-system_engineering-devops/0x00-shell_basics# git commit -m "Update README.md"
+[master 5502830] Update README.md
+ 1 file changed, 23 insertions(+), 1 deletion(-)
+ rewrite 0x00-shell_basics/README.md (100%)
+root@4332e3357bf5:~/alx-system_engineering-devops/0x00-shell_basics# git push
+
+```
