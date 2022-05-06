@@ -86,3 +86,5 @@ root@4332e3357bf5:~/alx-system_engineering-devops/0x00-shell_basics# git commit 
 root@4332e3357bf5:~/alx-system_engineering-devops/0x00-shell_basics# git push
 
 ```
+The READM.md file on GitHub:
+![result](https://user-images.githubusercontent.com/88312276/167193436-e05ac1ae-1ea1-44d4-abba-1afe5354fdc7.jpg)
