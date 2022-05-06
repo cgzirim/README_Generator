@@ -243,17 +243,23 @@ def sort_tasks():
                         key = int(line[j])
                 content += lines[i]
                 value = "".join(content)
+
             # If a key wasn't generated for a task, it means that
-            # task wasn't numbered. generate a with a negative value for it.
-            if key in dictionary.keys():
+            # task wasn't numbered: generate a with a negative number
+            # as its key.
+            try:
+                # Do not use an existing key for a new content:
+                if key in dictionary.keys():
+                    key_false -= 1
+                    dictionary[key_false] = value
+                else:
+                    dictionary[key] = value
+            except UnboundLocalError:
                 key_false -= 1
                 dictionary[key_false] = value
-            else:
-                dictionary[key] = value
 
     #Sort tasks
     key_list = [k for k in dictionary.keys()]
-    print(key_list)
     if key_list == sorted(key_list):
         return 0
     

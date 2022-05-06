@@ -84,16 +84,16 @@ def task():
     # Update a task and exit if the task exists
     if update_task(tsk_title) == 1:
         return 1
+    
+    file_name = input ("file name: ")
+    file_description = input ("file description: ")
 
-    file_info = input ("<file name: file description>: ")
-    file_name = "".join(file_info[:file_info.index(':')])
-    file_description = "".join(file_info[file_info.index(':'):])
-    file_url = p_url + "/" + file_name
-    file_url = "[{}]({})".format(file_name, p_url + "/" + file_name)
-
-    # A task would not be created if it's title or content is missing
-    if tsk_title == "" or file_info == "":
+    # A task would not be created if it's title or file name is missing.
+    if tsk_title == "" or file_name == "":
         return (0)
+
+    file_url = p_url + "/" + file_name
+    file_url = "[{}]({}): ".format(file_name, p_url + "/" + file_name)
 
 
     content =  section1_begin
