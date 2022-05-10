@@ -14,7 +14,7 @@ Fork or clone this repo to your any directory on your machine. For Linux, I reco
 Once you have the `README_Generator` directory on your computer:
 1. `cd` to the directory
 2. Open the `rdm` file, Not `rdm.py`, and fill in the relative path to the directory.
-3. Copy the `rdm` file to /usr/bin.
+3. Copy the `rdm` file to `/usr/bin`.
 
 From your working directory:
 - Run `rdm` to see all commands you can use to making the README.md file.
@@ -45,7 +45,7 @@ root@4332e3357bf5:~/README_Generator# cat rdm
 ...
 python3 /root/README_Generator/rdm.py $1 $2
 ```
-Copy the `rdm` file to /usr/bin:
+Copy the `rdm` file to `/usr/bin`:
 ```
 root@4332e3357bf5:~/README_Generator# cd
 root@4332e3357bf5:~# cp README_Generator/rdm /usr/bin
